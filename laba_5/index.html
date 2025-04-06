@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Автомобильный каталог</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Каталог автомобилей</h1>
+  </header>
+
+  <form id="carForm">
+    <fieldset>
+      <legend>Введите информацию об автомобиле</legend>
+
+      <label for="carSeries">Серия автомобиля:</label>
+      <input type="text" id="carSeries" required>
+      <br>
+
+      <label for="carDate">Дата выпуска:</label>
+      <input type="date" id="carDate" required>
+      <br>
+
+      <label for="carPurpose">Назначение:</label>
+      <input type="text" id="carPurpose" required>
+      <br>
+
+      <label for="manufacturerAddress">Адрес производителя:</label>
+      <input type="text" id="manufacturerAddress" required>
+      <br>
+
+      <label for="propertySelect">Выберите свойство:</label>
+      <select id="propertySelect">
+        <option value="carSeries">Серия</option>
+        <option value="carDate">Дата выпуска</option>
+        <option value="carPurpose">Назначение</option>
+        <option value="manufacturerAddress">Адрес производителя</option>
+      </select>
+      <br>
+
+      <button type="button" id="addPropertyBtn">Добавить свойство</button>
+      <button type="button" id="removePropertyBtn">Убрать свойство</button>
+      <br>
+
+      <button type="submit">Ввести запись в таблицу</button>
+      <button type="button" id="clearFormBtn">Очистить форму</button>
+      <button type="button" id="removeEntryBtn">Удалить запись</button>
+    </fieldset>
+  </form>
+
+  <table id="carTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Серия</th>
+        <th>Дата выпуска</th>
+        <th>Назначение</th>
+        <th>Адрес производителя</th>
+        <th>Действия</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <footer>
+    <p>&copy; 2025 Автокаталог</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+  }
+  nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    float: left;
+    height: 100vh;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  article {
+    margin-left: 220px;
+    padding: 20px;
+  }
+  fieldset {
+    border: 2px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  legend {
+    font-weight: bold;
+  }
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  #modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background-color: white;
+    margin: 100px auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  aside {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 200px;
+    float: right;
+    margin-top: 20px;
+  }
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
