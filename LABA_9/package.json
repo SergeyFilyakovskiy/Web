@@ -1,0 +1,12 @@
+{
+  "name": "city-project",
+  "version": "1.0.0",
+  "description": "Demo project for processing city names (capitalization and sorting) with Node.js and DHTML.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Обработка названий городов</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+  <h1>Задание 13: работа с массивом названий городов</h1>
+
+  <label for="city-input">Введите города (через запятую или с новой строки):</label><br>
+  <textarea id="city-input" placeholder="minsk, moscow, london"></textarea><br>
+  <button id="save-btn">Сохранить массив</button>
+  <button id="show-raw-btn">Показать исходный</button>
+  <button id="show-proc-btn">Показать обработанный</button>
+  <p id="info"></p>
+
+  <div id="lists">
+    <ol id="raw-list" start="1"></ol>
+    <ol id="proc-list" start="1"></ol>
+  </div>
+</body>
+</html>
