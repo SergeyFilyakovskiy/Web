@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.slogan {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+
+.promo-section {
+    margin-bottom: 40px;
+}
+
+.promo-card {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.product-image {
+    position: relative;
+    flex: 1;
+    min-height: 400px;
+    background: url('../images/discount-bg.jpg') center/cover;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #e74c3c;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.promo-info {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.promo-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.promo-description {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.price-container {
+    margin: 20px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #95a5a6;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.new-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Таймер */
+.timer-controls {
+    margin: 25px 0;
+}
+
+.time-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.time-input label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.time-input input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    max-width: 100px;
+}
+
+.time-input button {
+    padding: 10px 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+    max-width: 150px;
+}
+
+.time-input button:hover {
+    background: #2980b9;
+}
+
+.timer-display {
+    margin: 20px 0;
+}
+
+.time-left {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #ecf0f1;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    width: 100%;
+    transition: width 1s linear;
+}
+
+/* Уведомления */
+.notification {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+#halfTimeNotification {
+    background: #f39c12;
+    color: white;
+}
+
+#endTimeNotification {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Кнопка покупки */
+.buy-button {
+    padding: 15px 30px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 20px;
+    align-self: center;
+}
+
+.buy-button:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* Особенности */
+.features-section {
+    margin: 40px 0;
+}
+
+.features-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.feature p {
+    color: #7f8c8d;
+}
+
+/* Подвал */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
+    margin-top: 50px;
+}
+
+/* Анимации */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .promo-card {
+        flex-direction: column;
+    }
+    
+    .product-image {
+        min-height: 250px;
+    }
+    
+    .promo-title {
+        font-size: 1.5rem;
+    }
+    
+    .time-left {
+        font-size: 2rem;
+    }
+}

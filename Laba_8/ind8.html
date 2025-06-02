@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Специальное предложение - Скидка 50%</title>
+    <link rel="stylesheet" href="css/st8.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">SuperShop</h1>
+            <p class="slogan">Лучшие предложения каждый день</p>
+        </header>
+
+        <main class="main-content">
+            <section class="promo-section">
+                <div class="promo-card">
+                    <div class="product-image">
+                        <img src="img/tovar151557.jpg" alt="Умные часы Premium Pro">
+                        <div class="discount-badge">-50%</div>
+                    </div>
+                    
+                    <div class="promo-info">
+                        <h2 class="promo-title">Умные часы Premium Pro</h2>
+                        <p class="promo-description">Мощный процессор, 2 недели работы без подзарядки, мониторинг здоровья и водонепроницаемость до 50м</p>
+                        
+                        <div class="price-container">
+                            <span class="old-price">12 990 ₽</span>
+                            <span class="new-price">6 495 ₽</span>
+                        </div>
+                        
+                        <div class="timer-controls">
+                            <div class="time-input">
+                                <label for="minutes">Установите время акции (минуты):</label>
+                                <input type="number" id="minutes" min="1" max="120" value="5">
+                                <button id="startTimer">Запустить таймер</button>
+                            </div>
+                        </div>
+                        
+                        <div class="timer-display">
+                            <div class="time-left">
+                                <span id="hours">00</span>:
+                                <span id="minutes">00</span>:
+                                <span id="seconds">00</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" id="progress"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="notification" id="halfTimeNotification">
+                            ⏰ Осталось половина времени! Успейте купить!
+                        </div>
+                        
+                        <div class="notification" id="endTimeNotification">
+                            ⌛ Акция завершена! Скидка больше не действует.
+                        </div>
+                        
+                        <button class="buy-button">Купить со скидкой</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="features-section">
+                <h2>Почему выбирают нас?</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">🚚</div>
+                        <h3>Быстрая доставка</h3>
+                        <p>Доставим ваш заказ в течение 1-2 дней</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Легкий возврат</h3>
+                        <p>14 дней на возврат без вопросов</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Гарантия 2 года</h3>
+                        <p>Официальная гарантия производителя</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p>© 2023 SuperShop. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script src="js/app8.js"></script>
+</body>
+</html>

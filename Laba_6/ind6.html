@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выставка мобильной продукции</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        .form-section, .table-section, .actions-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #e6f7ff;
+        }
+        
+        .property-controls {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .new-property {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .new-property input {
+            flex: 1;
+        }
+        
+        .stats {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f4fc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Управление данными выставки мобильной продукции</h1>
+        
+        <div class="form-section">
+            <h2>Форма ввода данных</h2>
+            <div class="form-group">
+                <label for="companyName">Название компании:</label>
+                <input type="text" id="companyName" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Страна:</label>
+                <input type="text" id="country" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="productCount">Количество продукции:</label>
+                <input type="number" id="productCount" min="1" required>
+            </div>
+            
+            <div id="dynamicFields"></div>
+            
+            <div class="form-group">
+                <button id="addBtn">Добавить запись</button>
+                <button id="clearBtn">Очистить форму</button>
+            </div>
+        </div>
+        
+        <div class="actions-section">
+            <h2>Действия с записями</h2>
+            <div class="form-group">
+                <label for="recordId">Выберите запись по ID:</label>
+                <select id="recordId"></select>
+            </div>
+            <div class="form-group">
+                <button id="deleteBtn">Удалить запись</button>
+                <button id="sortBtn">Сортировать страны по количеству продукции</button>
+            </div>
+            
+            <div class="property-controls">
+                <h3>Управление свойствами</h3>
+                <div class="form-group">
+                    <label for="propertySelect">Выберите свойство для удаления:</label>
+                    <select id="propertySelect"></select>
+                    <button id="removePropertyBtn">Убрать свойство</button>
+                </div>
+                
+                <div class="form-group">
+                    <label>Добавить новое свойство:</label>
+                    <div class="new-property">
+                        <select id="newPropertySelect">
+                            <option value="phone">Телефон компании</option>
+                            <option value="address">Адрес компании</option>
+                            <option value="website">Веб-сайт</option>
+                            <option value="contactPerson">Контактное лицо</option>
+                        </select>
+                        <input type="text" id="newPropertyValue" placeholder="Значение свойства">
+                        <button id="addPropertyBtn">Добавить свойство</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="statsOutput" class="stats"></div>
+        </div>
+        
+        <div class="table-section">
+            <h2>Список участников выставки</h2>
+            <table id="exhibitionTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Название компании</th>
+                        <th>Страна</th>
+                        <th>Эл. почта</th>
+                        <th>Количество продукции</th>
+
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app6.js"></script>
+</body>
+</html>

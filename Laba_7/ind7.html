@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор динамических блоков</title>
+    <link rel="stylesheet" href="style7.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Генератор динамических блоков</h1>
+            <p>Создавайте и настраивайте блоки с помощью современных технологий ES6</p>
+        </header>
+
+        <main>
+            <section class="controls">
+                <div class="control-group">
+                    <h2>Настройки блока</h2>
+                    
+                    <div class="form-row">
+                        <label for="blockSize">Размер блока:</label>
+                        <select id="blockSize">
+                            <option value="small">Маленький</option>
+                            <option value="medium" selected>Средний</option>
+                            <option value="large">Большой</option>
+                            <option value="extra-large">Очень большой</option>
+                            <option value="custom">Пользовательский</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="blockPosition">Позиционирование:</label>
+                        <select id="blockPosition">
+                            <option value="static">Обычное</option>
+                            <option value="relative">Относительное</option>
+                            <option value="absolute">Абсолютное</option>
+                            <option value="fixed">Фиксированное</option>
+                            <option value="sticky">Липкое</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="blockTheme">Тема блока:</label>
+                        <select id="blockTheme">
+                            <option value="nature">Природа</option>
+                            <option value="technology">Технологии</option>
+                            <option value="city">Город</option>
+                            <option value="abstract">Абстракция</option>
+                            <option value="space">Космос</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="blockTitle">Заголовок:</label>
+                        <select id="blockTitle">
+                            <option value="welcome">Добро пожаловать</option>
+                            <option value="about">О нас</option>
+                            <option value="services">Наши услуги</option>
+                            <option value="contact">Контакты</option>
+                            <option value="custom">Свой вариант</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="blockContent">Содержимое:</label>
+                        <select id="blockContent">
+                            <option value="lorem">Стандартный текст</option>
+                            <option value="tech">Технологический текст</option>
+                            <option value="nature">Текст о природе</option>
+                            <option value="business">Деловой текст</option>
+                            <option value="custom">Свой вариант</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row custom-input hidden" id="customTitleRow">
+                        <label for="customTitle">Введите свой заголовок:</label>
+                        <input type="text" id="customTitle">
+                    </div>
+
+                    <div class="form-row custom-input hidden" id="customContentRow">
+                        <label for="customContent">Введите свой текст:</label>
+                        <textarea id="customContent"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <button id="createBtn">Создать блок</button>
+                        <button id="updateBtn" disabled>Обновить блок</button>
+                        <button id="clearBtn">Очистить все</button>
+                    </div>
+                </div>
+
+                <div class="block-selector">
+                    <h2>Управление блоками</h2>
+                    <select id="blockSelector" disabled>
+                        <option value="">Выберите блок для редактирования</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="blocks-container" id="blocksContainer">
+            
+            </section>
+        </main>
+
+        <footer>
+            <p>Проект создан с использованием ECMAScript 6</p>
+        </footer>
+    </div>
+
+    <script src="app7.js"></script>
+</body>
+</html>
